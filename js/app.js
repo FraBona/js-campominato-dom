@@ -20,13 +20,12 @@ btnDomElement.addEventListener('click', function(){
   const cellElements = document.querySelectorAll('.cell');
   console.log(cellElements)
 
+  let cont = 0;
 
   for(let i = 0; i < cellElements.length; i++){
     const cell = cellElements[i];
     console.log(cell);
     console.log(bombe.includes(i + 1));
-
-    let cont = 0;
     cell.addEventListener('click', function(){
 
       if(bombe.includes(i + 1) === true){
