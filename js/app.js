@@ -1,5 +1,7 @@
 const gridDomElement = document.querySelector('.grid');
 const btnDomElement = document.querySelector('.play');
+const gameOverDomElement = document.querySelector('.game-over');
+const pointDomElement = document.querySelector('.point');
 
 btnDomElement.addEventListener('click', function(){
   gridDomElement.innerHTML = '';
@@ -24,12 +26,20 @@ btnDomElement.addEventListener('click', function(){
     console.log(cell);
     console.log(bombe.includes(i + 1));
 
+    let cont = 0;
     cell.addEventListener('click', function(){
+
       if(bombe.includes(i + 1) === true){
         cellElements[i].classList.add('color-red');
+        gridDomElement.innerHTML = '';
+        gameOverDomElement.innerHTML = 'GAME OVER'
+        pointDomElement.innerHTML = 'il tuo punteggio é ' + cont;
       }
       else{
         cellElements[i].classList.add('color-cell');
+        cont++;
+        console.log(cont);
+        pointDomElement.innerHTML = 'il tuo punteggio é '+ cont;
       }
     })
    /* cell.addEventListener('click', function(){

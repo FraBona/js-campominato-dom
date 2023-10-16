@@ -30,3 +30,17 @@ section{
 .color-red{
   background: red;
 }
+
+.game-over{
+  color: red;
+  font-size: 80px;
+  display: grid;
+  place-items: center;
+}
+
+.point{
+  color: green;
+  font-size: 50px;
+  display: grid;
+  place-items: center;
+}
