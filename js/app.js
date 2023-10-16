@@ -4,6 +4,9 @@ const btnDomElement = document.querySelector('.play');
 btnDomElement.addEventListener('click', function(){
   gridDomElement.innerHTML = '';
 
+  const bombe = bombRandomNumber(16);
+  console.log(bombe);
+
   for(let i = 0; i < 100; i++){
     const n = i + 1;
 
@@ -24,15 +27,19 @@ btnDomElement.addEventListener('click', function(){
       cellElements[i].classList.add('color-cell');
     })
   }
+})
+
+function bombRandomNumber(number){
 
   const bombs = [];
 
- while(bombs.length < 16){
-    const number = Math.floor(Math.random() * 16) + 1;
-    if(bombs !== number){
-      console.log(bombs);
+  while(bombs.length < 16){
+    const number = Math.floor(Math.random() * 100) + 1;
+
+    if(bombs.includes(number) === false){
       bombs.push(number);
     }
   }
-  console.log(bombs);
-})
+
+  return bombs;
+}
