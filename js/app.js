@@ -18,14 +18,24 @@ btnDomElement.addEventListener('click', function(){
   const cellElements = document.querySelectorAll('.cell');
   console.log(cellElements)
 
+
   for(let i = 0; i < cellElements.length; i++){
     const cell = cellElements[i];
     console.log(cell);
+    console.log(bombe.includes(i + 1));
 
     cell.addEventListener('click', function(){
+      if(bombe.includes(i + 1) === true){
+        cellElements[i].classList.add('color-red');
+      }
+      else{
+        cellElements[i].classList.add('color-cell');
+      }
+    })
+   /* cell.addEventListener('click', function(){
       console.log('ho cliccato la cella: ' + i);
       cellElements[i].classList.add('color-cell');
-    })
+    })*/
   }
 })
 

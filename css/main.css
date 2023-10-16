@@ -26,3 +26,7 @@ section{
 .color-cell{
   background-color: aqua;
 }
+
+.color-red{
+  background: red;
+}
