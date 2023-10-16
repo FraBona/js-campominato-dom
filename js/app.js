@@ -31,15 +31,15 @@ btnDomElement.addEventListener('click', function(){
 
       if(bombe.includes(i + 1) === true){
         cellElements[i].classList.add('color-red');
-        gridDomElement.innerHTML = '';
         gameOverDomElement.innerHTML = 'GAME OVER'
         pointDomElement.innerHTML = 'il tuo punteggio é ' + cont;
       }
       else{
         cellElements[i].classList.add('color-cell');
-        cont++;
+        cont = cont + 1;
         console.log(cont);
-        pointDomElement.innerHTML = 'il tuo punteggio é '+ cont;
+        const htmlpoint = '<p>Il tuo punteggio é </p>' + cont
+        pointDomElement.innerHTML = htmlpoint; 
       }
     })
    /* cell.addEventListener('click', function(){
